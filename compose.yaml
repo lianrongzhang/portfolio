@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   nginx:
-    image: ${DOCKERHUB_USERNAME}/nginx:${GITHUB_SHA}
+    image: ${DOCKERHUB_USERNAME}/nginx:latest
     build:
       context: .
       dockerfile: Dockerfile
