@@ -1,0 +1,31 @@
+# File: .github/workflows/deploy-to-server.yml
+name: Deploy to Server
+
+on:
+  workflow_run:
+    workflows: ["Docker Compose Build and Push"]
+    types:
+      - completed
+
+jobs:
+  deploy-to-server:
+    name: Deploy to Server
+    runs-on: ubuntu-latest
+
+    env:
+      SSH_USER: ${{ secrets.SSH_USER }}
+      SSH_HOST: ${{ secrets.SSH_HOST }}
+      DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+      GITHUB_SHA: ${{ github.sha }}
+
+    steps:
+      - name: Setup SSH key
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Deploy to server
+        run: |
+          ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST \
+            "docker pull $DOCKERHUB_USERNAME/nginx:$GITHUB_SHA && \
+             docker run -d -p 8000:5173 $DOCKERHUB_USERNAME/nginx:${GITHUB_SHA}"
