@@ -10,4 +10,4 @@ services:
       - ./nginx/site.conf:/etc/nginx/conf.d/default.conf:ro
       - ./nginx/main.conf:/etc/nginx/nginx.conf:ro
     ports:
-      - PUBLIC_IP: "8000:5173"
+      - "8000:5173"
