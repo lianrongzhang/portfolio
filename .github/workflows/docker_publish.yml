@@ -1,0 +1,29 @@
+name: Docker Compose Build and Push
+
+on:
+  push:
+    branches:
+      - main  # 更改為您的主分支名稱
+
+jobs:
+  build-and-push:
+    name: Build and Push Docker images
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push Docker images
+        run: |
+          docker compose build
+          docker compose push
+
+      - name: Logout from Docker Hub
+        run: docker logout
