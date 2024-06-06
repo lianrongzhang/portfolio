@@ -1,6 +1,8 @@
+version: '3.8'
+
 services:
   nginx:
-    image: ${{secret.DOCKER_USERNAME}}/nginx:${{github.sha}}
+    image: ${DOCKERHUB_USERNAME}/nginx:${GITHUB_SHA}
     volumes:
       - ./nginx/site.conf:/etc/nginx/conf.d/default.conf:ro
       - ./nginx/main.conf:/etc/nginx/nginx.conf:ro
