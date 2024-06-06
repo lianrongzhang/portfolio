@@ -15,7 +15,7 @@ jobs:
       DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
 
     steps:
-      - name: checkout
+      - name: Checkout repository
         uses: actions/checkout@v2
 
       - name: Login to Docker Hub
@@ -34,4 +34,14 @@ jobs:
 
       - name: Logout from Docker Hub
         run: docker logout
-        
+
+      - name: Setup SSH key
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Deploy to server
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} \
+            "docker pull ${{ secrets.DOCKERHUB_USERNAME }}/nginx:${GITHUB_SHA} && \
+             docker run -d -p 8000:5173 ${{ secrets.DOCKERHUB_USERNAME }}/nginx:${GITHUB_SHA}"
