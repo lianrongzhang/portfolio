@@ -3,6 +3,9 @@ version: '3.8'
 services:
   nginx:
     image: ${DOCKERHUB_USERNAME}/nginx:${GITHUB_SHA}
+    build:
+      context: .
+      dockerfile: Dockerfile
     volumes:
       - ./nginx/site.conf:/etc/nginx/conf.d/default.conf:ro
       - ./nginx/main.conf:/etc/nginx/nginx.conf:ro
