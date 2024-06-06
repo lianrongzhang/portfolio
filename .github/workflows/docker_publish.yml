@@ -39,9 +39,9 @@ jobs:
         uses: webfactory/ssh-agent@v0.5.3
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-      
+
       - name: Deploy to server
         run: |
-          ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}
-          docker pull ${{ secrets.DOCKERHUB_USERNAME }}/nginx
-          docker run -d -p 8000:5173 ${{ secrets.DOCKERHUB_USERNAME }}/nginx
+          ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} \
+            "docker pull ${{ secrets.DOCKERHUB_USERNAME }}/nginx && \
+             docker run -d -p 8000:5173 ${{ secrets.DOCKERHUB_USERNAME }}/nginx"
