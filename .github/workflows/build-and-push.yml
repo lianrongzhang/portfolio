@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main  # 更改為您的主分支名稱
-  workflow_dispatch:  # 添加這一行以啟用手動觸發
 
 jobs:
   build-and-push:
@@ -35,32 +34,11 @@ jobs:
 
       - name: Logout from Docker Hub
         run: docker logout
-
-      # - name: Trigger Jenkins Job
-      #   run: curl -X POST "http://140.128.101.144:8090/job/Deploy/build" --user <JENKINS_USER>:<API_TOKEN>
-      #   env:
-      #     JENKINS_USER: ${{ secrets.JENKINS_USER }}
-      #     API_TOKEN: ${{ secrets.JENKINS_API_TOKEN }}
-
-  # deploy-to-server:
-  #   name: Deploy to Server
-  #   runs-on: ubuntu-latest
-  #   needs: build-and-push  # 指定依賴的job
-
-  #   steps:
-  #     - name: Checkout repository
-  #       uses: actions/checkout@v2
-
-  #     - name: Setup SSH key
-  #       uses: webfactory/ssh-agent@v0.5.3
-  #       with:
-  #         ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-
-  #     - name: SSH to server
-  #       run: |
-  #         ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}
-
-  #     - name: Pull and run Docker image
-  #       run: |
-  #           "docker pull ${{ secrets.DOCKERHUB_USERNAME }}/nginx:${GITHUB_SHA} && \
-  #            docker run -d -p 8000:5173 ${{ secrets.DOCKERHUB_USERNAME }}/nginx:${GITHUB_SHA}"
+      
+      - name: Trigger Jenkins Job
+        uses: appleboy/jenkins-action@master
+        with:
+          url: http://140.128.101.144:8090
+          user: ${{ secrets.JENKINS_USER }}
+          token: ${{ secrets.JENKINS_TOKEN }}
+          job: 'Deploy'
