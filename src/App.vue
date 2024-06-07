@@ -19,7 +19,7 @@ import Certification from './components/Certification.vue';
             <div class="container mx-auto text-center">
                 <div class="flex justify-center space-x-6">
                     <a href="https://github.com/lianrongzhang" class="font-bold text-white hover:underline">GitHub</a>
-                    <a href="www.linkedin.com/in/lienjung-chang" class="font-bold text-blue-700 hover:underline">LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/lienjung-chang" class="font-bold text-blue-700 hover:underline">LinkedIn</a>
                     <a href="mailto:zlianrong1224@gmail.com" class="font-bold text-red-600 hover:underline">Email</a>
                 </div>
             </div>
