@@ -36,10 +36,11 @@ jobs:
       - name: Logout from Docker Hub
         run: docker logout
 
-      - name: Trigger Jenkins Job
-        run: |
-          JENKINS_URL="http://140.128.101.144:8090/job/your-job-name/build"
-          curl -u ${{ secrets.JENKINS_USER }}:${{ secrets.JENKINS_API_TOKEN }} -X POST $JENKINS_URL
+      # - name: Trigger Jenkins Job
+      #   run: curl -X POST "http://140.128.101.144:8090/job/Deploy/build" --user <JENKINS_USER>:<API_TOKEN>
+      #   env:
+      #     JENKINS_USER: ${{ secrets.JENKINS_USER }}
+      #     API_TOKEN: ${{ secrets.JENKINS_API_TOKEN }}
 
   # deploy-to-server:
   #   name: Deploy to Server
