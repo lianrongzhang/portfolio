@@ -30,8 +30,8 @@ jobs:
 
       - name: Build and push
         run: |
-          docker-compose build
-          docker-compose push
+          docker build . -t zlianrong1224/nginx:latest
+          docker image push zlianrong1224/nginx:latest
 
       - name: Logout from Docker Hub
         run: docker logout
