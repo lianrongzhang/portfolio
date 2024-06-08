@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   nginx:
-    image: portfolio:latest
+    image: zlianrong1224/portfolio:latest
     volumes:
       - ./nginx/site.conf:/etc/nginx/conf.d/default.conf:ro
       - ./nginx/main.conf:/etc/nginx/nginx.conf:ro

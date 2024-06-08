@@ -29,8 +29,8 @@ jobs:
 
       - name: Build and push
         run: |
-          docker build . -t portfolio:latest
-          docker image push portfolio:latest
+          docker build . -t zlianrong1224/portfolio:latest
+          docker image push zlianrong1224/portfolio:latest
 
       - name: Logout from Docker Hub
         run: docker logout
