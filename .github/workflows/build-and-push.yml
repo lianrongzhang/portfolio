@@ -7,7 +7,15 @@ on:
 
 jobs:
   build-and-push:
-    name: Build and Push ${{ github.event.repository.updated_at}}
+
+    - name: Get current time
+      uses: josStorer/get-current-time@v2.0.2
+      id: current-time
+      with:
+        format: YYYYMMDD-HHmmSS
+        utcOffset: "+08:00"
+
+    name: Build and Push ${{ steps.current-time.outputs.formattedTime }}
     runs-on: ubuntu-latest
 
     env:
