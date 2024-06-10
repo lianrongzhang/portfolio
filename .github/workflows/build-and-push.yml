@@ -3,11 +3,11 @@ name: Docker Compose Build and Push
 on:
   push:
     branches:
-      - main  # 更改為您的主分支名稱
+      - main
 
 jobs:
   build-and-push:
-    name: Build and Push ${{ github.event.repository.updated_at}}
+    name: Build and Push
     runs-on: ubuntu-latest
 
     env:
