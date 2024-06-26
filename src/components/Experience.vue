@@ -2,57 +2,50 @@
 
 </script>
 <template>
-    <section id="experience" class="px-40 mb-40">
-        <div class="flex justify-center">
-            <h2 class="text-4xl font-bold mb-8 text-gray-600">Experience</h2>
-        </div>
-        <div class="flex justify-center container mx-auto">
-            <div class="grid grid-cols-1 space-y-11 mr-20 mt-1.5">
-                <time class="text-md font-bold leading-none text-gray-700">Feb - 2024</time>
-                <time class="text-md font-bold leading-none text-gray-700">Api - 2023</time>
-                <time class="text-md font-bold leading-none text-gray-700">Feb - 2023</time>
+    <section class="bg-gray-50 py-40">
+        <h2 class="text-2xl font-bold text-gray-600 text-center md:text-4xl mb-8">Experience</h2>
+        <div class="md:mx-auto flex justify-center mx-4">
+            <div class="border bg-white rounded-lg shadow-lg p-8">
+                <div class="relative pl-8 sm:pl-32 py-6 group">
+                    <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-indigo-600 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
+                        <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-sm font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-gray-900">Feb - 2024</time>
+                        <div class="text-xl font-bold text-slate-900">
+                            JTX Corporation
+                        </div>
+                    </div>
+                    <!-- Content -->
+                    <div class="text-slate-500 mb-4">
+                        I worked as a front-end developer intern at JTX Corporation. I collaborated with the design team to create a new dashboard for the company's internal application.
+                    </div>
+                    <span class="text-sm font-bold border rounded-lg px-3 py-1 mr-2 shadow">Intern - Remote</span>
+                    <span class="text-sm font-bold border rounded-lg px-3 py-1 shadow">Taipei, Taiwan</span>
+                </div>
+
+                <div class="relative pl-8 sm:pl-32 py-6 group">
+                    <!-- Vertical line (::before) ~ Date ~ Title ~ Circle marker (::after) -->
+                    <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-indigo-600 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
+                        <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-gray-700">Api - 2023</time>
+                        <div class="text-xl font-bold text-slate-900">Tunghai University</div>
+                    </div>
+                    <!-- Content -->
+                    <div class="text-slate-500 mb-4">As a research assistant, I worked on a project to develop a new system for the collaborating company. I was responsible for front-end development and unit testing of the application.</div>
+                    <span class="text-sm font-bold border rounded-lg px-3 py-1 mr-2 shadow">Intern - Remote</span>
+                    <span class="text-sm font-bold border rounded-lg px-3 py-1 shadow">Taipei, Taiwan</span>
+                </div>
+
+                <!-- Item #3 -->
+                <div class="relative pl-8 sm:pl-32 py-6 group">
+                    <!-- Vertical line (::before) ~ Date ~ Title ~ Circle marker (::after) -->
+                    <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-indigo-600 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
+                        <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-gray-700">Feb - 2023</time>
+                        <div class="text-xl font-bold text-slate-900">Taichung Veterans General Hospital</div>
+                    </div>
+                    <!-- Content -->
+                    <div class="text-slate-500 mb-4">I worked as a research assistant at Taichung Veterans General Hospital. I was dedicated to studying the MIMIC-IV dataset and machine learning to predict patient mortality rates.</div>
+                    <span class="text-sm font-bold border rounded-lg px-3 py-1 mr-2 shadow">Intern - Remote</span>
+                    <span class="text-sm font-bold border rounded-lg px-3 py-1 shadow">Taipei, Taiwan</span>
+                </div>
             </div>
-            <ol class="relative border-s border-gray-200 dark:border-gray-700">
-                <li class="ml-20 mb-10 ms-6">
-                    <span
-                        class="absolute flex mt-1.5 items-center justify-center w-4 h-4 bg-blue-300 rounded-full -start-2 ring-8 ring-white">
-                    </span>
-                    <h2 class="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white">JTX Corporation</h2>
-                    <div class="flex items-center text-sm font-semibold text-gray-500 dark:text-gray-400">
-                        <span>Intern - Remote</span>
-                        <span class="mx-2">•</span>
-                        <span>Taipei, Taiwan</span>
-                    </div>
-                    <p class="text-base font-normal text-gray-500 max-w-5xl">I worked as a front-end developer intern at JTX Corporation. I collaborated with the design team to create a new dashboard for the company's internal application.</p>
-                </li>
-                <li class="ml-20 mb-10 ms-6">
-                    <span
-                        class="absolute flex mt-1.5 items-center justify-center w-4 h-4 bg-blue-300 rounded-full -start-2 ring-8 ring-white">
-                    </span>
-                    <h3 class="mb-1 text-lg font-semibold text-gray-900">Tunghai University</h3>
-                    <div class="flex items-center text-sm font-semibold text-gray-500">
-                        <span>RA - Onsite</span>
-                        <span class="mx-2">•</span>
-                        <span>Taichung, Taiwan</span>
-                    </div>
-                    <p class="text-base font-normal text-gray-500 max-w-5xl">
-                        As a research assistant, I worked on a project to develop a new system for the collaborating company. I was responsible for front-end development and unit testing of the application.</p>
-                </li>
-                <li class="ml-20 ms-6">
-                    <span
-                        class="absolute flex mt-1.5 items-center justify-center w-4 h-4 bg-blue-300 rounded-full -start-2 ring-8 ring-white">
-                    </span>
-                    <h3 class="mb-1 text-lg font-semibold text-gray-900">Taichung Veterans General Hospital</h3>
-                    <div class="flex items-center text-sm font-semibold text-gray-500">
-                        <span>RA - Onsite</span>
-                        <span class="mx-2">•</span>
-                        <span>Taichung, Taiwan</span>
-                    </div>
-                    <p class="text-base font-normal text-gray-500 max-w-5xl">
-                        I worked as a research assistant at Taichung Veterans General Hospital. I was dedicated to studying the MIMIC-IV dataset and machine learning to predict patient mortality rates.
-                    </p>
-                </li>
-            </ol>
         </div>
     </section>
 </template>
